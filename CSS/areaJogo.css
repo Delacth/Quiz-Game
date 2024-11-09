@@ -1,0 +1,73 @@
+/* Corpo da página com fundo 'degradê' */
+body {
+    font-family: 'DynaPuff', cursive;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #6f86d6, #48c6ef); 
+    color: #fff;
+}
+
+/* Container principal da página de entrada */
+.container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.entrada-container {
+    max-width: 400px;
+    width: 100%;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.1); /* Fundo semitransparente */
+    border-radius: 8px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    text-align: center;
+}
+
+/* Estilo do título */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+/* Estilos para os botões */
+button {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    margin: 10px 0;
+    background-color: #4a90e2;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+/* Efeito de hover nos botões */
+button:hover {
+    background-color: #357abd;
+    transform: translateY(-5px);
+}
+
+/* Estilos do rodapé */
+footer {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: #ffffffcc;
+    padding: 1rem;
+    text-align: center;
+    margin-top: auto;
+}
+
+footer a {
+    color: #ffffffcc;
+    margin-right: 15px;
+    transition: color 0.3s;
+}
+
+/* Efeito de hover nos links do rodapé */
+footer a:hover {
+    color: #ffffff;
+}

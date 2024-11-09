@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Quiz</title>
+    <!-- Fontes e Font Awesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+   
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="CSS/telaCadastro.css"> <!-- Arquivo CSS específico -->
+</head>
+<body>
+
+    <!-- Container de Cadastro -->
+    <div class="container d-flex justify-content-center align-items-center vh-100">
+        <div class="cadastro-container text-center">
+            <h2 class="mb-4">Cadastro</h2>
+            <form id="formCadastro">
+                <div class="mb-3">
+                    <input type="text" id="nomeCadastro" class="form-control" placeholder="Nome" required>
+                </div>
+                <div class="mb-3">
+                    <input type="password" id="senhaCadastro" class="form-control" placeholder="Senha" required>
+                </div>
+                <button type="submit" class="btn btn-primary w-100 mb-3">Cadastrar</button>
+                <a href="telaLogin.html" type="submit" class="btn btn-light w-100 mb-3"> Voltar</a>
+                <p class="mt-3">Já tem uma conta? <a href="telaLogin.html" class="text-light">Faça login</a></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Rodapé -->
+    <footer>
+        <p class="mb-1">Feito por Delacth</p>
+        <div>
+            <a href="https://github.com/SeuPerfil" target="_blank">
+                <i class="fab fa-github fa-lg"></i>
+            </a>
+            <a href="https://linkedin.com/in/SeuPerfil" target="_blank">
+                <i class="fab fa-linkedin fa-lg"></i>
+            </a>
+        </div>
+    </footer>
+
+    <!-- Scripts Bootstrap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="JS/bootstrap.bundle.min.jsss"></script>
+    <script src="JS/jogador.js"></script>
+</body>
+</html>

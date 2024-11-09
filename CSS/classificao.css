@@ -1,0 +1,98 @@
+
+body {
+    font-family: 'DynaPuff', cursive;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #6f86d6, #48c6ef); /* Fundo degradê */
+    color: #fff;
+}
+
+/* Container centralizado para a página de classificação */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 2rem;
+}
+
+/* Container da classificação */
+.classificacao-container {
+    max-width: 800px;
+    width: 100%;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.1); /* Fundo semitransparente */
+    border-radius: 8px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    text-align: center;
+}
+
+/* Títulos das tabelas */
+h1, h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* Estilo das tabelas */
+table {
+    width: 100%;
+    margin-bottom: 2rem;
+    color: #fff;
+}
+
+th, td {
+    text-align: center;
+    padding: 12px;
+}
+
+th {
+    background-color: #4a90e2;
+}
+
+tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+table tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Botão de voltar */
+button {
+    width: 200px;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 8px;
+    background-color: #4a90e2;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+/* Efeito de hover nos botões */
+button:hover {
+    background-color: #357abd;
+    transform: translateY(-5px);
+}
+
+/* Rodapé */
+footer {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: #ffffffcc;
+    padding: 1rem;
+    text-align: center;
+    margin-top: auto;
+}
+
+footer a {
+    color: #ffffffcc;
+    margin-right: 15px;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #ffffff;
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Administrador</title>
+    <!-- Fontes e Font Awesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+    <!-- Bootstrap CSS & Ficheiros CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/CSS/telaLogin.css">
+    
+</head>
+<body class="d-flex flex-column">
+
+    <!-- Container de Login -->
+    <div class="container d-flex justify-content-center align-items-center flex-grow-1">
+        <div class="login-container text-center shadow-lg p-4 rounded">
+            <h2 class="mb-4">Área do Administrador</h2>
+            <form id="formLoginAdmin">
+                <div class="mb-3">
+                    <input type="text" id="nomeAdmin" class="form-control" placeholder="Nome" required>
+                </div>
+                <div class="mb-3">
+                    <input type="password" id="senhaAdmin" class="form-control" placeholder="Senha" required>
+                </div>
+                <button type="submit" class="btn btn-primary w-100 mb-3">Entrar</button>
+                <a href="index.html" class="btn btn-light w-100">Voltar</a>
+            </form>
+        </div>
+    </div>
+
+    <!-- Rodapé -->
+    <footer>
+        <p class="mb-1">Feito por Delacth</p>
+        <div class="footer-links">
+            <a href="https://github.com/SeuPerfil" target="_blank">
+                <i class="fab fa-github fa-lg"></i> GitHub
+            </a>
+            <a href="https://linkedin.com/in/SeuPerfil" target="_blank">
+                <i class="fab fa-linkedin fa-lg"></i> LinkedIn
+            </a>
+        </div>
+    </footer>
+
+    <!-- Scripts Bootstrap e Font Awesome -->
+    <script src="JS/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="JS/admin.js"></script> 
+</body>
+</html>
