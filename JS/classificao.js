@@ -1,44 +1,33 @@
-// Função para preencher a tabela de classificação
-function preencherClassificacao() {
-    
-    
-    // Obtendo os jogadores dos modos Clássico e Punição do localStorage
+// Função para carregar as classificações dos modos
+function carregarClassificacao() {
+    // Carregar os dados de classificação de cada modo
     const jogadoresClassico = JSON.parse(localStorage.getItem("jogadoresClassico")) || [];
     const jogadoresPunicao = JSON.parse(localStorage.getItem("jogadoresPunicao")) || [];
 
-    // Função para ordenar jogadores pela pontuação de forma decrescente
-    function ordenarPorPontuacao(jogadores) {
-        return jogadores.sort((a, b) => b.pontuacao - a.pontuacao);
-    }
+    // Ordena os jogadores pela pontuação, do maior para o menor
+    jogadoresClassico.sort((a, b) => b.PontuacaoNormal - a.PontuacaoNormal);
+    jogadoresPunicao.sort((a, b) => b.PontuacaoNormal - a.PontuacaoNormal);
 
-    // Preenchendo a tabela de Modo Clássico
-    const tbodyClassico = document.getElementById("classificacaoClassico");
-    const jogadoresClassicoOrdenados = ordenarPorPontuacao(jogadoresClassico);
-
-    jogadoresClassicoOrdenados.forEach((jogador, index) => {
-        const row = document.createElement("tr");
-        row.innerHTML = `
-            <td>${index + 1}</td>
-            <td>${jogador.nome}</td>
-            <td>${jogador.pontuacao}</td>
-        `;
-        tbodyClassico.appendChild(row);
+    // Preencher a tabela do modo clássico
+    const tabelaClassico = document.getElementById("classificacaoClassico");
+    tabelaClassico.innerHTML = ''; // Limpa a tabela
+    jogadoresClassico.forEach((jogador, index) => {
+        const row = tabelaClassico.insertRow();
+        row.insertCell(0).textContent = index + 1; // Posição
+        row.insertCell(1).textContent = jogador.nome; // Nome
+        row.insertCell(2).textContent = jogador.PontuacaoNormal; // Pontuação
     });
 
-    // Preenchendo a tabela de Modo Punição
-    const tbodyPunicao = document.getElementById("classificacaoPunicao");
-    const jogadoresPunicaoOrdenados = ordenarPorPontuacao(jogadoresPunicao);
-
-    jogadoresPunicaoOrdenados.forEach((jogador, index) => {
-        const row = document.createElement("tr");
-        row.innerHTML = `
-            <td>${index + 1}</td>
-            <td>${jogador.nome}</td>
-            <td>${jogador.pontuacao}</td>
-        `;
-        tbodyPunicao.appendChild(row);
+    // Preencher a tabela do modo punição
+    const tabelaPunicao = document.getElementById("classificacaoPunicao");
+    tabelaPunicao.innerHTML = ''; // Limpa a tabela
+    jogadoresPunicao.forEach((jogador, index) => {
+        const row = tabelaPunicao.insertRow();
+        row.insertCell(0).textContent = index + 1; // Posição
+        row.insertCell(1).textContent = jogador.nome; // Nome
+        row.insertCell(2).textContent = jogador.PontuacaoNormal; // Pontuação
     });
 }
 
-// Chama a função de preenchimento quando a página for carregada
-document.addEventListener("DOMContentLoaded", preencherClassificacao);
+// Carregar as classificações quando a página for carregada
+document.addEventListener("DOMContentLoaded", carregarClassificacao);

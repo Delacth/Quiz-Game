@@ -1,0 +1,136 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'DynaPuff', cursive;
+}
+
+body {
+    background-color: #f3f4f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 90%;
+    max-width: 600px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    padding: 20px;
+    text-align: center;
+}
+
+.quiz-header {
+    background: #4A90E2;
+    color: #ffffff;
+    padding: 15px;
+    border-radius: 10px 10px 0 0;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.timer {
+    font-weight: bold;
+    color: #ff6b6b;
+}
+
+.quiz-main {
+    padding: 20px;
+}
+
+.question-container {
+    margin-bottom: 20px;
+}
+
+#questionText {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.answers {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.answers button {
+    background: #e9ecef;
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.answers button:hover {
+    background: #d1d8e0;
+}
+
+.answers .correct {
+    background-color: #4caf50 !important;
+    color: #fff;
+}
+
+.answers .incorrect {
+    background-color: #ff6b6b !important;
+    color: #fff;
+}
+
+.next-btn, .save-btn {
+    background-color: #4A90E2;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 20px;
+}
+
+#saveScoreBtn {
+    background-color: #4CAF50; 
+    color: white; 
+    border: none; 
+    padding: 15px 32px; 
+    text-align: center; 
+    text-decoration: none; 
+    display: inline-block; /* Para que o botão tenha um comportamento de bloco */
+    font-size: 16px; 
+    border-radius: 8px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease; /* Transição suave para a cor de fundo */
+}
+
+#saveScoreBtn:hover {
+    background-color: #45a049; 
+}
+
+#saveScoreBtn:active {
+    background-color: #387c39; 
+}
+
+.next-btn:hover, .save-btn:hover {
+    background-color: #357ABD;
+}
+
+.hidden {
+    display: none;
+}
+
+.result-section {
+    padding: 20px;
+}
+
+.result-section h2 {
+    font-size: 1.8rem;
+    color: #4A90E2;
+    margin-bottom: 15px;
+}

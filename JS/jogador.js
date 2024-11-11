@@ -37,6 +37,7 @@ function autenticarJogador(nome, senha) {
     const jogador = jogadores.find(jogador => jogador.nome === nome && jogador.senha === senha);
     if (jogador) {
         marcarComoLogado();
+        sessionStorage.setItem("jogadorAtivo", JSON.stringify(jogador));
         console.log("Login bem-sucedido!");
         return true;
     } else {
@@ -73,18 +74,44 @@ function esperarLogin(event) {
     }
 }
 
+// Função para calcular a pontuação com base no tempo de resposta
+function calcularPontuacao(tempo, acerto) {
+    let pontuacao = 0;
+    if (acerto) {
+        pontuacao += 5;
+        if (tempo <= 5) {
+            pontuacao += 10;
+        } else if (tempo <= 10) {
+            pontuacao += 5;
+        }
+    }
+    return pontuacao;
+}
+
+// Função para salvar a pontuação final no LocalStorage
+function guardarPontuacao(pontuacaoFinal) {
+    let jogadores = JSON.parse(localStorage.getItem("jogadores")) || [];
+    const jogadorAtivo = JSON.parse(sessionStorage.getItem("jogadorAtivo"));
+
+    const index = jogadores.findIndex(jogador => jogador.nome === jogadorAtivo.nome);
+    if (index !== -1) {
+        jogadores[index].PontuacaoNormal += pontuacaoFinal;
+        localStorage.setItem("jogadores", JSON.stringify(jogadores));
+        alert("Pontuação guardada com sucesso!");
+    } else {
+        alert("Erro ao guardar a pontuação.");
+    }
+}
+
 // Verifica o estado de login ao carregar a página de login
 document.addEventListener("DOMContentLoaded", function() {
-    // Verifica se a página é a tela de login e se o usuário estava logado
     const formLogin = document.getElementById("formLogin");
 
-    // Se o usuário já estiver logado, encerra o login
     if (formLogin && sessionStorage.getItem("usuarioLogado")) {
         encerrarLogin();
         console.log("Login encerrado devido ao retorno à página de login.");
     }
 
-    // Restante do código para inicializar os formulários
     const formCadastro = document.getElementById("formCadastro");
 
     if (formCadastro) {
@@ -92,6 +119,15 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     if (formLogin) {
         formLogin.addEventListener("submit", esperarLogin);
+    }
+
+    // Botão para guardar a pontuação
+    const btnGuardar = document.getElementById("btnGuardarPontuacao");
+    if (btnGuardar) {
+        btnGuardar.addEventListener("click", function() {
+            const pontuacaoFinal = parseInt(sessionStorage.getItem("pontuacaoFinal")) || 0;
+            guardarPontuacao(pontuacaoFinal);
+        });
     }
 });
 
@@ -102,12 +138,10 @@ window.onpageshow = function(event) {
         window.location.reload();
     }
 };
+
 // Função para encerrar a sessão
 function encerrarSessao() {
-    // Remove o status de login armazenado no sessionStorage ou localStorage
     sessionStorage.removeItem("usuarioLogado");
-    
-    // Redireciona para a tela de login após o logout
     window.location.href = "telaLogin.html";
 }
 
